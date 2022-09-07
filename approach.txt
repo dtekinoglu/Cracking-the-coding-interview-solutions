@@ -1,0 +1,18 @@
+The approach shown in the video above can be boiled down into 4 main steps:
+
+Clarify
+  - Understand (0-3mins)
+  - Ask clarifying questions, edge cases (3-8mins)
+  - Specify assumptions (8-10mins)
+
+Plan
+  - Find a solution (10-20mins)
+  - Explain your solution (15-20mins) 
+
+Implement
+  - Optimize (20-25mins)
+  - Write the code (25-35mins)
+  
+Test & optimize
+  - Test run your code (35-40mins)
+  - Optimize your code (40-50mins): Explain time and space complexity
