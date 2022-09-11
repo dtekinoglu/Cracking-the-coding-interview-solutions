@@ -25,7 +25,7 @@ import unittest
 
 # APPROACH 2: 1. Sort the string.
 #             2. If there are more than one character with odd frequency return False.
-# Complexity: Time O(nlogn), No additional space.
+# Complexity: Time O(nlogn), Space O(1)
 
 def check_palindrome_by_dict(s):
     counts = {}
