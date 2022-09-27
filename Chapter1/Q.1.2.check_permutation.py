@@ -7,6 +7,8 @@ from collections import Counter
 # Example: Python - YhonPy should return True.
 # Assumption: Uppercase - lowercase sensitive. So, abc and BCA are not permutations of each other. 
 #             The same strings are permutations of each other. No need to return any special thing.
+#              Is white space significant?
+#       Observe that the length must be the same.
 
 # Approach 1: SORT strings and check if they are the same.
              # Time: O(nlogn), no additional space is used.
@@ -28,7 +30,7 @@ def checkEqualByCount(s, q):
     if len(s) != len(q):
         return False
     
-    arr = [0] * 128 # Assuming ASCII characters
+    arr = [0] * 128 # Assuming ASCII characters (always check this)
 
     for elem in s:
         arr[ord(elem)] +=1
