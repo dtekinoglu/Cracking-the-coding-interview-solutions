@@ -16,7 +16,8 @@ import unittest
 # Observation: let s1 = abcde,  s2 = cdeab
 #               (x= ab, y= cde) then s1= xy, s2 = yx
 #               s2 exist in xyxy. So we can concatenate s1 with itself and check if s2 is a substring.
-#               Time O(n), Space O(n)
+#               Time O(n) assuming that isSubstring runs in O(A+B) time for strings of length A and length B,
+#               Space O(n)
 
 
 def string_rotation(s1,s2):
