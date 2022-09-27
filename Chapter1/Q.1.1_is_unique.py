@@ -3,6 +3,8 @@ import unittest
 # Is Unique: Implement an algorithm to determine if a string has all unique characters. What if you
 # cannot use additional data structures?
 
+# Question: ASCII or Unicode string
+
 # Approach 1: Compare each element with every other element of the string
 #             Time -> O(n^2) Space -> O(1)
 
@@ -15,7 +17,14 @@ def isUniqueBruteForce(s):
     return True
 
 # Approach 2: Use hash table to store frequency of each element
-#             Time -> O(n) Space -> O(n)
+#             Time -> O(n) Space -> O(1)
+# Instead of hash table we can use a boolen arrat of length 128 (ASCII).
+
+# We can also argue that time compl is O(1) since the loop will never iterate more than 128.
+# If you didn't want to assume the character set is fixed, you could express the complexity as 
+#O( c) space and O(min ( c, n)) or O( c) time, where c is the size of the character set. 
+
+# How about using a bit vector?
 
 def isUniqueHashTable(s):
     
