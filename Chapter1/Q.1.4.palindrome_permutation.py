@@ -15,13 +15,13 @@ import unittest
 #            Strings with one character?
 #            Do we consider spaces? Or only alphabetic characters?
 #            If a string is already a palindrome, is it still considered as a permutation of palindrome?
-#            Uppercase-bigger case? According to the example -> NOT case-sensitive
+#            Uppercase-lowercase? According to the example -> NOT case-sensitive
 
 # Assumptions: Don't consider spaces. Assume that only alphabetic characters are important.
 
 # APPROACH 1: 1. Create a frequency dictionary, count number of occurences of each alphabetic character.
 #             2. If there are more than one character with odd frequency return False.
-# Complexity: Time O(n), Space O(n)
+# Complexity: Time O(n), Space O(1)
 
 # APPROACH 2: 1. Sort the string.
 #             2. If there are more than one character with odd frequency return False.
