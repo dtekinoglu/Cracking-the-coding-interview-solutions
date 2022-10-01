@@ -6,6 +6,9 @@ from linked_list import LinkedList
 
 # Plan:Reverse and Compare 
 # Our first solution is to reverse the linked list and compare the reversed list to the original list.
+# Time O(N), space O(N)
+
+# Improvement: We can only push half of the list to stack and compare whether it is the same as the remaining halg.
 
 def isPalindrome(ll):
 
