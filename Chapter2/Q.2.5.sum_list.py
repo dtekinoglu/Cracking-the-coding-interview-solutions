@@ -1,5 +1,12 @@
 from linked_list import LinkedList
 
+# Sum Lists: You have two numbers represented by a linked list, where each node contains a single 
+#digit. The digits are stored in reverse order, such that the 1 's digit is at the head of the list. Write a 
+#function that adds the two numbers and returns the sum as a linked list. 
+#EXAMPLE 
+#Input: (7-> 1 -> 6) + (5 -> 9 -> 2).That is,617 + 295. 
+#Output: 2 -> 1 -> 9. That is, 912. 
+
 
 def sum_lists(ll_a, ll_b):
     n1, n2 = ll_a.head, ll_b.head
@@ -22,6 +29,8 @@ def sum_lists(ll_a, ll_b):
 
     return ll
 
+# O(N) time, O(N) space
+
 
 
 class NumericLinkedList(LinkedList):
@@ -37,6 +46,55 @@ class NumericLinkedList(LinkedList):
             number += node.value * 10**place
         return number
 
+#FOLLOW UP 
+#Suppose the digits are stored in forward order. Repeat the above problem. 
+#Input: (6 -> 1 -> 7) + (2 -> 9 -> 5).That is,617 + 295. 
+#Output: 9 -> 1 -> 2. That is, 912. 
+
+# Plan: 1. Reverse the lists and call the function above.
+#       2. Use stack.
+
+def sum_lists_followup(l1, l2):
+    s1 = []
+    cur1= l1.head
+
+    while cur1:
+        s1.append(cur1.value)
+        cur1 = cur1.next
+
+    s2 = []
+    cur2= l2.head
+
+    while cur2:
+        s2.append(cur2.value)
+        cur2 = cur2.next
+
+    s3 = []
+    carry = 0
+
+    while len(s1) != 0 and len(s2) != 0:
+        num = s1.pop() + s2.pop() + carry
+        s3.append(num%10)
+        carry = num//10
+
+    
+    if len(s1) != 0:
+        s3.append(s1.pop()+carry)
+        carry = 0
+    
+    elif  len(s2) != 0:
+        s3.append(s2.pop()+carry)
+        carry = 0
+    
+    ll = NumericLinkedList()
+
+    while len(s3) != 0:
+        num = s3.pop()
+        ll.add(num)
+    return ll
+    
+
+        
 
 test_cases = (
     # all values can either be list of integer or integers
@@ -52,7 +110,6 @@ test_cases = (
 
 testable_functions = (
     sum_lists,
-    # sum_lists_followup
 )
 
 
@@ -86,8 +143,8 @@ def example():
     ll_b = LinkedList.generate(3, 0, 9)
     print(ll_a)
     print(ll_b)
-    print(sum_lists(ll_a, ll_b))
-    # print(sum_lists_followup(ll_a, ll_b))
+    #print(sum_lists(ll_a, ll_b))
+    print(sum_lists_followup(ll_a, ll_b))
 
 
 if __name__ == "__main__":
