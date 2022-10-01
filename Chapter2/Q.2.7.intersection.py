@@ -1,3 +1,5 @@
+from linked_list import LinkedList
+
 # Intersection: Given two (singly) linked lists, determine if the two lists intersect. Return the 
 # intersecting node. Note that the intersection is defined based on reference, not value. That is, if the 
 # kth node of the first linked list is the exact same node (by reference) as the jth node of the second 
@@ -61,3 +63,24 @@ def find_intersect(l1,l2):
     if length1 >= length2:
         return chop_and_traverse(l1,l2,length1-length2)
     return chop_and_traverse(l2,l1,length2-length1)
+
+def test_linked_list_intersection():
+    shared = LinkedList()
+    shared.add_multiple([1, 2, 3, 4])
+
+    a = LinkedList([10, 11, 12, 13, 14, 15])
+    b = LinkedList([20, 21, 22])
+
+    a.tail.next = shared.head
+    a.tail = shared.tail
+    b.tail.next = shared.head
+    b.tail = shared.tail
+
+    print(a)
+    print(b)
+
+    # should be 1
+    assert find_intersect(a, b).value == 1
+
+if __name__ == "__main__":
+    test_linked_list_intersection()
