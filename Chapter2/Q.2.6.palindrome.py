@@ -1,3 +1,5 @@
+from linked_list import LinkedList
+
 # Question: Implement a function to check if a linked list is a palindrome. 
 
 # Clarify: Is additional data structure allowed?
@@ -24,3 +26,13 @@ def isPalindrome(ll):
     
     return True
 
+def example():
+    ll_a = LinkedList.generate(3, 1, 2)
+    ll_b = LinkedList.generate(3, 0, 9)
+    print(ll_a, isPalindrome(ll_a))
+    print(ll_b,isPalindrome(ll_b))
+
+
+
+if __name__ == "__main__":
+    example()
