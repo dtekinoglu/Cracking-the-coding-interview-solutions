@@ -77,6 +77,7 @@ def test_linked_list_intersection():
     b.tail = shared.tail
 
 
+
     # should be 1
     assert find_intersect(a, b).value == 1
 
